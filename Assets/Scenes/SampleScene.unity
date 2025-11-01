@@ -1825,9 +1825,6 @@ MonoBehaviour:
   playerSpawnPoint: {fileID: 1158989062}
   enemySpawnPoints:
   - {fileID: 848059307}
-  - {fileID: 516926095}
-  - {fileID: 522417398}
-  - {fileID: 1716108801}
 --- !u!4 &789815618
 Transform:
   m_ObjectHideFlags: 0

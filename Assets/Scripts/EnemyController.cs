@@ -111,6 +111,8 @@ public class EnemyController : MonoBehaviour
 
     private void Investigate()
     {
+        navMeshAgent.isStopped = false;
+
         navMeshAgent.destination = lastKnownPlayerPosition;
 
         if (Vector3.Distance(transform.position, lastKnownPlayerPosition) < 1f)

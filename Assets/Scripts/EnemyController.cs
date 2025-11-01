@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private float speed = 2f;
     [SerializeField] private float patrolRadius = 5f;
+    [SerializeField] private float attackAccuracy = 3f;
 
     public float fovRadius = 5f;
     public float fovAngle = 45f;
@@ -120,7 +121,15 @@ public class EnemyController : MonoBehaviour
 
     private void Attack()
     {
-        navMeshAgent.destination = player.position;
+        if (Vector3.Distance(transform.position, player.position) <= attackAccuracy)
+        {
+            navMeshAgent.isStopped = true;
+        }
+        else
+        {
+            navMeshAgent.isStopped = false;
+            navMeshAgent.destination = player.position;
+        }
 
         shootingCharacter.Shoot();
     }
